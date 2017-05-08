@@ -23,4 +23,11 @@ service 'apache2' do
 	action [:start, :enable]
 end
 
+hostname = node['hostname']
+
+file '/tmp/foo' do
+ 	content "Hostname is this: #{hostname}"
+end
+
+
 
